@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Registered Users</title>
+  <style>
+    body {
+      text-align: center;
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      padding-top: 50px;
+    }
+    table {
+      margin: 20px auto;
+      border-collapse: collapse;
+      width: 50%;
+    }
+    th, td {
+      padding: 10px;
+      border: 1px solid #ddd;
+      text-align: left;
+    }
+    th {
+      background-color: #4CAF50;
+      color: white;
+    }
+    button, a {
+      padding: 5px 10px;
+      background-color: #f44336;
+      color: white;
+      text-decoration: none;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    button:hover, a:hover {
+      background-color: #da190b;
+    }
+    h2 {
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <h2>Registered Users</h2>
+  {% if users %}
+    <table>
+      <tr>
+        <th>User Name</th>
+        <th>Action</th>
+      </tr>
+      {% for user in users %}
+        <tr>
+          <td>{{ user }}</td>
+          <td><a href="/delete_user/{{ user }}" onclick="return confirm('Delete {{ user }}?')">Delete</a></td>
+        </tr>
+      {% endfor %}
+    </table>
+  {% else %}
+    <p>No users registered yet. <a href="/">Go to Home</a></p>
+  {% endif %}
+  <br>
+  <a href="/">Go to Home</a>
+</body>
+</html>

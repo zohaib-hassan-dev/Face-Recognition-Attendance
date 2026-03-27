@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Attendance Logs</title>
+  <style>
+    body {
+      text-align: center;
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      padding-top: 50px;
+    }
+    table {
+      margin: 20px auto;
+      border-collapse: collapse;
+      width: 60%;
+    }
+    th, td {
+      padding: 10px;
+      border: 1px solid #ddd;
+      text-align: left;
+    }
+    th {
+      background-color: #4CAF50;
+      color: white;
+    }
+    h2 {
+      color: #333;
+    }
+    a {
+      color: #4CAF50;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <h2>Attendance Logs</h2>
+  {% if logs %}
+    <table>
+      <tr>
+        <th>User Name</th>
+        <th>Timestamp</th>
+      </tr>
+      {% for log in logs %}
+        <tr>
+          <td>{{ log[0] }}</td>
+          <td>{{ log[1] }}</td>
+        </tr>
+      {% endfor %}
+    </table>
+  {% else %}
+    <p>No attendance records yet. <a href="/">Start marking attendance</a>.</p>
+  {% endif %}
+  <br>
+  <a href="/">Go to Home</a>
+</body>
+</html>
