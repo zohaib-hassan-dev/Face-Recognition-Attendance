@@ -26,3 +26,5 @@ A full-stack Machine Learning application that automates attendance tracking usi
    ```bash
    git clone [https://github.com/zohaib-hassan-dev/face-recognition-attendance-.git](https://github.com/zohaib-hassan-dev/face-recognition-attendance-.git)
    cd face-recognition-attendance-
+
+<!-- gitpulse:contribution index="1" timestamp="2026-05-11" -->
